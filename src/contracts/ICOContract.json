@@ -1,0 +1,98 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {"name": "_tokenName", "type": "string"},
+        {"name": "_tokenSymbol", "type": "string"},
+        {"name": "_totalSupply", "type": "uint256"},
+        {"name": "_saleStartTime", "type": "uint256"},
+        {"name": "_saleEndTime", "type": "uint256"},
+        {"name": "_minContribution", "type": "uint256"},
+        {"name": "_maxContribution", "type": "uint256"},
+        {"name": "_softCap", "type": "uint256"},
+        {"name": "_hardCap", "type": "uint256"}
+      ],
+      "name": "createICO",
+      "outputs": [{"name": "", "type": "address"}],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {"name": "_icoAddress", "type": "address"},
+        {"name": "_amount", "type": "uint256"},
+        {"name": "_currency", "type": "uint8"},
+        {"name": "_stakingTier", "type": "uint8"}
+      ],
+      "name": "contribute",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [{"name": "_icoAddress", "type": "address"}],
+      "name": "getICODetails",
+      "outputs": [
+        {"name": "tokenName", "type": "string"},
+        {"name": "tokenSymbol", "type": "string"},
+        {"name": "totalRaised", "type": "uint256"},
+        {"name": "softCap", "type": "uint256"},
+        {"name": "hardCap", "type": "uint256"},
+        {"name": "saleStartTime", "type": "uint256"},
+        {"name": "saleEndTime", "type": "uint256"},
+        {"name": "status", "type": "uint8"}
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [{"name": "_icoAddress", "type": "address"}],
+      "name": "getInvestors",
+      "outputs": [
+        {"name": "addresses", "type": "address[]"},
+        {"name": "contributions", "type": "uint256[]"},
+        {"name": "currencies", "type": "uint8[]"},
+        {"name": "stakingTiers", "type": "uint8[]"}
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [{"name": "_icoAddress", "type": "address"}],
+      "name": "finalizeICO",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [{"name": "_icoAddress", "type": "address"}],
+      "name": "refundContributors",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {"indexed": true, "name": "icoAddress", "type": "address"},
+        {"indexed": true, "name": "creator", "type": "address"},
+        {"indexed": false, "name": "tokenName", "type": "string"}
+      ],
+      "name": "ICOCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {"indexed": true, "name": "icoAddress", "type": "address"},
+        {"indexed": true, "name": "contributor", "type": "address"},
+        {"indexed": false, "name": "amount", "type": "uint256"},
+        {"indexed": false, "name": "currency", "type": "uint8"}
+      ],
+      "name": "ContributionMade",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50...",
+  "contractAddress": "0x742d35Cc6634C0532925a3b8D4C9db96C4b5Da5f"
+}
